@@ -2,6 +2,13 @@
 
 `<bounding-boxes>` is a lightweight web component that renders an image and overlays YOLO-format bounding boxes with optional labels. It is designed for tagging and reviewing bounding boxes within browser-based tools, and includes a built-in UI for editing and creating boxes.
 
+## Example
+
+See it in action [here](https://paulcampbell.github.io/bounding-boxes-component/)
+
+![bounding-boxes custom web component](demo.gif "Bounding Boxes Component")
+
+
 ## Features
 
 - Render an image onto a canvas with YOLO-format bounding boxes (center X/Y, width, height, all normalized 0–1).

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Bounding Boxes Component Demo</title>
+		<style>
+			body {
+				font-family: sans-serif;
+				margin: 2rem;
+				background: #0f2a16;
+				color: #e2e8f0;
+			}
+
+			bounding-boxes {
+				max-width: 100%;
+				border: 1px solid #334155;
+				border-radius: 8px;
+				overflow: hidden;
+				box-shadow: 0 8px 30px rgba(15, 23, 42, 0.35);
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Bounding Boxes Component Demo</h1>
+		<p>
+			The component expects bounding boxes in <abbr title="You Only Look Once">YOLO</abbr> format
+			(centre&nbsp;X, centre&nbsp;Y, width, height) with all values normalised between 0 and 1.
+		</p>
+        <p>
+			The component optionally supports an autosuggest feature for labeling boxes.
+		</p>
+		<bounding-boxes
+			src="muppets.jpg"
+			boxes='[
+                {
+                    "xPosition": 0.6182206444474247,
+                    "yPosition": 0.4021144903858238,
+                    "width": 0.4422906048819742,
+                    "height": 0.6912467010179716,
+                    "label": "Pig"
+                },
+                {
+                    "xPosition": 0.10062365879828326,
+                    "yPosition": 0.5866061329646852,
+                    "width": 0.18412184817596566,
+                    "height": 0.3743684805831343,
+                    "label": "Chicken"
+                }
+            ]'
+			autosuggestItems='["Pig", "Chicken", "Frog", "Rabbit", "Totoise"]'
+		></bounding-boxes>
+
+		<script type="module">
+			import './src/bounding-boxes.js';
+
+			const viewer = document.querySelector('bounding-boxes');
+			viewer?.addEventListener('boxeschange', (event) => {
+				console.log('Boxes updated:', event.detail.boxes);
+			});
+		</script>
+	</body>
+</html>

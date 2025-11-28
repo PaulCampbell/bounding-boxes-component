@@ -1,0 +1,15 @@
+{
+  "name": "bounding-box-component",
+  "version": "1.0.0",
+  "description": "Custom web component for visualising and editing YOLO-format bounding boxes.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "vitest --environment jsdom"
+  },
+  "devDependencies": {
+    "esbuild": "0.27.0",
+    "jsdom": "24.0.0",
+    "vitest": "2.0.5"
+  }
+}
